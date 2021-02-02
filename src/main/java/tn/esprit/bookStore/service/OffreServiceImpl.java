@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.bookStore.entities.Offre;
@@ -51,19 +52,7 @@ public class OffreServiceImpl implements OffreService {
 	@Override
 	public List<Offre> getAllOffres() {
 		
-		DateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd");
-	       //obtenir la date courante
-	       Date date = new Date();
-	       String strDate = dFormat.format(date);  
-	       String date2="2021-01-25";
-	       if (strDate.equals(date2)){
-	    	   System.out.println("true");
-
-	       }else System.out.println("false");
-	       
-	       
-		
-		return offreRepository.findAll();
+		return offreRepository.findAll(Sort.by("dateDeb").ascending());
 	}
 
 }
