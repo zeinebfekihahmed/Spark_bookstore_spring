@@ -13,18 +13,14 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Date orderDate;
-	private Date shippingDate;
-	private String shippingMethod;
-	private String orderStatus;
+	
 	private BigDecimal orderTotal;
 	
 	@OneToMany(mappedBy = "order", cascade=CascadeType.ALL )
 	private List<CartItem> cartItemList;
 	
 	
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private UserPayment payment;
+
 	
 	@ManyToOne
 	private User user;
@@ -45,29 +41,7 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public Date getShippingDate() {
-		return shippingDate;
-	}
-
-	public void setShippingDate(Date shippingDate) {
-		this.shippingDate = shippingDate;
-	}
-
-	public String getShippingMethod() {
-		return shippingMethod;
-	}
-
-	public void setShippingMethod(String shippingMethod) {
-		this.shippingMethod = shippingMethod;
-	}
-
-	public String getOrderStatus() {
-		return orderStatus;
-	}
-
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
+	
 
 	public BigDecimal getOrderTotal() {
 		return orderTotal;
@@ -84,17 +58,6 @@ public class Order {
 	public void setCartItemList(List<CartItem> cartItemList) {
 		this.cartItemList = cartItemList;
 	}
-
-	
-
-	public UserPayment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(UserPayment payment) {
-		this.payment = payment;
-	}
-
 
 	public User getUser() {
 		return user;

@@ -8,14 +8,15 @@ public interface CartItemService {
    
 	List<CartItem> findByShoppingCart(ShoppingCart shoppingCart);
     CartItem updateCartItem(CartItem cartItem);
-    List<CartItem> findByUser(User user);
+    
     CartItem addBookToCartItem(Long BookId, Long userId, int qty);
 
     CartItem findById(Long id);
 
-    void removeCartItem(CartItem cartItem);
+    void removeCartItem(long cartItemId);
 
     CartItem save(CartItem cartItem);
-
+    List<CartItem> findByUser(User user);
     List<CartItem> findByOrder(Order order);
+    public String algoBook(long userId);
 }

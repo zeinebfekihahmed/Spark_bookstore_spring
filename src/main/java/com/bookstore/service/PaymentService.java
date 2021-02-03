@@ -1,12 +1,13 @@
 package com.bookstore.service;
 
+import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
 
 public interface PaymentService {
 
-    Customer getCustomer(String email);
+  
 
-    String chargeCustomer(String customer_id, int amount);
+    String chargeCustomer(long customer_id) throws StripeException;
 
-    boolean checkValidCard(String name, String email, String numCard, int ExpMonth, int ExpYear);
+    
 }

@@ -43,8 +43,7 @@ public class User {
 		this.cartItems = cartItems;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-	private List<UserPayment> userPaymentList;
+	
 
 	@OneToMany(mappedBy = "user")
 	private List<Order> orderList;
@@ -98,13 +97,7 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public List<UserPayment> getUserPaymentList() {
-		return userPaymentList;
-	}
-	public void setUserPaymentList(List<UserPayment> userPaymentList) {
-		this.userPaymentList = userPaymentList;
-	}
-	
+
 
 	public List<Order> getOrderList() {
 		return orderList;
