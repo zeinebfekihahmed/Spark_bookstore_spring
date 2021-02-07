@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.bookStore.entities.EmailTemplate;
@@ -24,7 +23,7 @@ public class TextEmailController {
     //obtenir la date courante
     Date date = new Date();
     String strDate = dFormat.format(date);  
-    String date2="2021-02-02";
+    String date2="2021-02-06";
 	
 	private static final Logger l = LogManager.getLogger(LoggingAspect.class);
 	@PostMapping(value="/textemail",consumes = "application/json", produces = "application/json")

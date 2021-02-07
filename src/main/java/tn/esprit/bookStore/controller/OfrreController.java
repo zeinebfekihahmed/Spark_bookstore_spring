@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,15 +43,13 @@ public Offre updateOffre(@RequestBody Offre f) {
 
 @DeleteMapping ("/delete/{id}")
 public String deleteOffreById(@PathVariable Long id) {
-	return service.deleteOffreById(id);
-	 
-	
+		return service.deleteOffreById(id);
 }
 
 @GetMapping("/offre/{id}")
 public Offre getOffre(@PathVariable Long id) {
-	
 	return service.getOffre(id);
+	
 }
 @GetMapping("/offres")
 public List<Offre> getAllOffres() {
@@ -74,10 +73,4 @@ public void exportToPDF(HttpServletResponse response) throws DocumentException, 
      
 }
 
-//@DeleteMapping ("/deletes")
-//public void deleteOffre(@RequestBody Offre f) {
-//	service.deleteOffre(f);
-	
-	
-//}
 }
